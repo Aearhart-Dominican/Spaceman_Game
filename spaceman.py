@@ -28,7 +28,13 @@ def is_word_guessed(secret_word, letters_guessed):
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
-    pass
+    for letter in secret_word:
+        if letter in letters_guessed:
+            pass
+        else:
+            return False
+    
+    return True
 
 def get_guessed_word(secret_word, letters_guessed):
     '''
@@ -43,9 +49,16 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
+    secret_word_display = ""
 
-    pass
-
+    for letter in secret_word:
+        if letter in letters_guessed:
+            secret_word_display += letter
+        else:
+            secret_word_display += "_"
+    
+    return secret_word_display
+    
 def is_guess_in_word(guess, secret_word):
     '''
     A function to check if the guessed letter is in the secret word
